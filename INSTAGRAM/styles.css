@@ -1,0 +1,517 @@
+/* Custom styles */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Montserrat:wght@400;500;600;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Permanent Marker', cursive, Montserrat, sans-serif;
+    background: #000;
+    color: #ccc;
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+/* Animated Background */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    z-index: 0;
+    overflow: hidden;
+    background-image: url('https://www.transparenttextures.com/patterns/noisy-texture.png');
+    background-repeat: repeat;
+    background-size: auto;
+    opacity: 1;
+}
+
+/* Glass Card Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/paper.png');
+    opacity: 0.1;
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+
+.glass-card h2, .glass-card h3 {
+    color: #eee;
+    margin-bottom: 1.5rem;
+}
+
+.glass-card h3 {
+    margin-bottom: 1rem;
+}
+
+/* Header Section */
+header h1 {
+    font-size: 4.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+/* Profile Image Styles */
+.profile-image-container {
+    margin-bottom: 3rem;
+}
+
+.profile-image-container img {
+    border: 3px solid #555;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Song Card Styles */
+.song-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.song-card:hover {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.song-card::before {
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.song-card:hover::before {
+    opacity: 1;
+}
+
+.song-card .absolute.bottom-4.left-4 {
+    z-index: 2;
+}
+
+.song-card img {
+    transition: transform 0.3s ease;
+}
+
+.song-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Container Styles */
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Form Styles */
+input, textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #eee;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 2px rgba(136, 136, 136, 0.5);
+    transform: none;
+}
+
+/* Comment Card */
+.comment-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #3B82F6;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.comment-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glass-card {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .song-card {
+        margin-bottom: 1rem;
+    }
+    
+    .profile-image-container {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .about-me-grid {
+        gap: 2rem;
+    }
+    
+    .photo-gallery-grid {
+        gap: 1rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+    position: relative;
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                 0.025em 0.04em 0 #fffc00;
+    animation: glitch 725ms infinite;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                     0.025em 0.04em 0 #fffc00;
+    }
+    15% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                     0.025em 0.04em 0 #fffc00;
+    }
+    16% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                     -0.05em -0.05em 0 #fffc00;
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                     -0.05em -0.05em 0 #fffc00;
+    }
+    50% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                     0 -0.04em 0 #fffc00;
+    }
+    99% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                     0 -0.04em 0 #fffc00;
+    }
+    100% {
+        text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+                     -0.04em -0.025em 0 #fffc00;
+    }
+}
+
+/* Social Links */
+.social-link {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: #ccc;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Music Player */
+.music-player-container {
+    padding: 1.5rem;
+}
+
+.music-player-container .flex.items-center.justify-between.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.music-player-container .flex.items-center.space-x-4.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.music-player {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 1.5rem;
+}
+
+.music-player h2 {
+    margin-bottom: 1rem;
+}
+
+.music-player img {
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.music-player button {
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.music-player button:hover {
+    color: #fff;
+}
+
+.music-player #progressBar, .music-player #volumeBar {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.music-player #progressBar div, .music-player #volumeBar div {
+    background: #888;
+}
+
+.music-player span {
+    color: #aaa;
+}
+
+/* Gaya untuk tombol prev/next yang dinonaktifkan/pudar */
+.nav-button {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: default;
+}
+
+.nav-button:hover {
+    color: #bbb;
+}
+
+/* Sesuaikan layout tombol jika perlu */
+.music-player-container .flex.space-x-4 {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.music-player-container .space-y-2 {
+    width: 100%;
+}
+
+.music-player-container .flex.items-center.space-x-2 {
+    width: 100%;
+}
+
+/* About Me Section */
+.about-me-grid {
+    gap: 3rem;
+}
+
+.about-me-grid .space-y-6 > div {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+.about-me-grid i {
+    color: #888;
+    margin-right: 0.75rem;
+}
+
+.photo-gallery-grid {
+    gap: 1.5rem;
+}
+
+.photo-gallery-grid img {
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.photo-gallery-grid .group-hover\:opacity-100 {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+    transition: none;
+}
+
+.photo-gallery-grid .group-hover\:scale-110 {
+    transform: none;
+}
+
+/* Liam and Noel Section adjustments */
+.text-center img.mx-auto {
+    border: 3px solid #555;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.text-center p.text-gray-300 {
+    color: #aaa;
+}
+
+/* Contact Form - Liam and Noel Section */
+#contactForm h2 {
+    margin-bottom: 1.5rem;
+}
+
+button[type="submit"] {
+    background: #555;
+    color: #eee;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    background: #666;
+}
+
+button[type="submit"] i {
+    color: #eee;
+}
+
+/* Form Styles - Disesuaikan untuk gaya mirip website teman */
+#contact form input[type="text"], 
+#contact form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+    color: #eee;
+    padding: 0.5rem 0;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contact form input[type="text"]:focus, 
+#contact form textarea:focus {
+    outline: none;
+    border-bottom-color: #fff;
+    box-shadow: none;
+    transform: none;
+}
+
+#contact form label {
+    display: block;
+    color: #bbb;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#contact form button[type="submit"] {
+    background: #555;
+    color: #eee;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    display: inline-block;
+    width: auto;
+}
+
+#contact form button[type="submit"]:hover {
+    background: #666;
+}
+
+#contact form button[type="submit"] i {
+    color: #eee;
+}
+
+/* Contact Form Section heading adjustment */
+#contact h2 {
+    margin-bottom: 2rem;
+}
+
+/* Header/Navbar */
+.site-header {
+    background: rgba(0, 0, 0, 0.6); /* Latar belakang header */
+    backdrop-filter: blur(5px); /* Sedikit blur pada header */
+    position: sticky; /* Header tetap di atas saat digulir */
+    top: 0;
+    z-index: 20; /* Pastikan header di atas konten */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-header .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.site-header .text-xl {
+    font-size: 1.1rem; /* Ukuran nama sedikit lebih kecil di header */
+}
+
+.nav-link {
+    color: #bbb; /* Warna tautan navigasi */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background 0.3s ease;
+    border-radius: 3px;
+}
+
+.nav-link:hover {
+    color: #fff; /* Warna tautan saat hover */
+    background: rgba(255, 255, 255, 0.08); /* Latar belakang saat hover */
+}
+
+/* Main Content Container - sesuaikan jika perlu jarak dengan header/footer */
+main {
+    padding-top: 1rem; /* Jarak dari header */
+    padding-bottom: 1rem; /* Jarak dari footer */
+}
+
+/* Footer */
+.site-footer {
+    background: rgba(0, 0, 0, 0.5); /* Latar belakang footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer p {
+    font-size: 0.9rem;
+} 
